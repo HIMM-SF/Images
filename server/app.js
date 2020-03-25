@@ -9,16 +9,16 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/api/rooms/:id', (req, res) => {
+app.get('/api/images/:id', (req, res) => {
   Listing
     .find({ _id: req.params.id })
-    .then(([ movie ]) => {
-      res.json(movie);
+    .then(([ data ]) => {
+      res.json(data);
     })
     .catch(err => console.log(err));
 });
 
-app.get('/api/rooms', (req, res) => {
+app.get('/api/images', (req, res) => {
   Listing
     .find()
     .then((data) => {
