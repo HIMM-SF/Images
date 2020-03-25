@@ -20,28 +20,30 @@ export const Image = styled.img`
 
 // the wrapper that organizes the gallery.
 export const Wrapper = styled.div`
+margin-left: 160px;
+margin-right: 174px;
   display: grid;
   grid-template-columns: 50% 25% 25%;
-  grid-template-rows: 250px 250px;
+  grid-template-rows: 190px 200px;
   grid-gap: 7px;
   grid-template-areas: "first second third"
                        "first fourth fifth";
   #first {
     grid-area: first;
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 25px 0px 0px 25px;
   }
   #second {
     grid-area: second;
   }
   #third {
     grid-area: third;
-    border-radius: 0px 20px 0px 0px;
+    border-radius: 0px 25px 0px 0px;
   }
   #fourth {
     grid-area: fourth;
   }
   #fifth {
     grid-area: fifth;
-    border-radius: 0px 0px 20px 0px;
+    border-radius: 0px 0px 25px 0px;
   }
 `;

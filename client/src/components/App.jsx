@@ -16,7 +16,7 @@ class App extends React.Component {
   getListing(id) {
     axios.get('http://localhost:3000/api/images')
       .then(({ data }) => {
-        this.setState({ listing: data[40] });
+        this.setState({ listing: data[Math.floor(Math.random() * 30)] });
       })
       .catch((err) => {
         console.log(err);
