@@ -5,18 +5,7 @@ import Listings from './Listings.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      listing: {
-        _id: 'number',
-        images: [1, 2, 3, 4, 5].map((i) => {
-          return {
-            _id: i,
-            url: 'loadingIMG.gif',
-            description: 'description'
-          };
-        })
-      },
-    };
+    this.state = {};
     this.getListing = this.getListing.bind(this);
   }
 
@@ -25,11 +14,9 @@ class App extends React.Component {
   }
 
   getListing(id) {
-    axios.get('/images/listing', {
-        _id: id
-    })
-      .then((result) => {
-        this.setState({ listing: result.data[0] });
+    axios.get('http://localhost:3000/api/images')
+      .then(({ data }) => {
+        this.setState({ listing: data[40] });
       })
       .catch((err) => {
         console.log(err);
@@ -39,7 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Listings listing={this.state.listing} />
+        { this.state.listing ? <Listings listing={this.state.listing} /> : "" }
       </div>
     );
   }
