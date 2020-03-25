@@ -44,7 +44,7 @@ const getRandomImage = () => {
 };
 
 const listings = []
-for(let i = 0; i < 100; i++) {
+for(let i = 0; i < 30; i++) {
   const images= [];
 
   for(let i = 0; i < 15; i++) {
