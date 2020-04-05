@@ -1,2 +1,3 @@
 # Images
--images component that displays all messages
+images component that displays all messages
+

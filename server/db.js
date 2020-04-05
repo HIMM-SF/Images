@@ -1,7 +1,7 @@
 // Mongoose connection
 const mongoose = require('mongoose');
 
-const db = 'mongodb://localhost:27017/images';
+const db = 'mongodb://mongo:27017/images';
 
 mongoose.connect(db, {
   useNewUrlParser: true,

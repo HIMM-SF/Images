@@ -1,0 +1,25 @@
+version: '3'
+services:
+  web:
+    image: "himm"
+    build: .
+    command: "node app.js"
+    depends_on:
+       - "mongo"
+    ports:
+      - "8000:8000"
+  mongo:
+    image: "mongo"
+    ports:
+      - "27017:27017"
+        # database:
+  #   container_name: mongo
+  #   image: mongo:latest
+  #   ports:
+  #   - "27017:27017"
+  # mongo-seed:
+  #   build: .
+  #   depends_on:
+  #   - "database"
+  #   command: "npm run seedDB"
+
